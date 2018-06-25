@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
 	},
@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "game",
-	"libVersion": "2.0.9",
+	"libVersion": "2.1.1",
 	"appid": "touristappid",
 	"projectname": "elastic",
 	"isGameTourist": true,
