@@ -2,10 +2,18 @@
 const Matter = require('./src/base/matter.js')
 import { App } from './App.js'
 
-window.Image = () => wx.createImage()
-
-// 获取画布
-const canvas = wx.createCanvas()
+// 同时兼容H5模式和微信小游戏模式
+const canvas = typeof wx == 'undefined' ? document.getElementById('app') : wx.createCanvas()
+// H5网页游戏模式
+if (typeof wx == 'undefined') {
+  canvas.width = 375
+  canvas.height = 667
+}
+// 微信小游戏模式
+else {
+  window.Image = () => wx.createImage()
+  window.Audio = () => wx.createInnerAudioContext()
+}
 // 初始化物理引擎
 const engine = Matter.Engine.create({
   enableSleeping: true

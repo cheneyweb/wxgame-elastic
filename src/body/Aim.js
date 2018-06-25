@@ -125,6 +125,7 @@ export class Aim extends Body {
   // 事件触发
   event() {
     let physics = this.physics
+    // 移动设备触摸事件
     physics.canvas.addEventListener('touchmove', e => {
       this.eventHandler(e, { isForce: false })
     })
@@ -132,6 +133,16 @@ export class Aim extends Body {
       this.eventHandler(e, { isForce: false })
     })
     physics.canvas.addEventListener('touchend', e => {
+      this.eventHandler(e, { isForce: true })
+    })
+    // PC设备鼠标事件
+    physics.canvas.addEventListener('mousemove', e => {
+      this.eventHandler(e, { isForce: false })
+    })
+    physics.canvas.addEventListener('mousedown', e => {
+      this.eventHandler(e, { isForce: false })
+    })
+    physics.canvas.addEventListener('mouseup', e => {
       this.eventHandler(e, { isForce: true })
     })
     return this
@@ -149,8 +160,16 @@ export class Aim extends Body {
     }
     // 非弹射静止
     if (!this.isForce && !this.isRending) {
-      this.x = e.touches[0].clientX
-      this.y = Math.max(50, e.touches[0].clientY)
+      // 移动设备触摸事件
+      if (e.touches) {
+        this.x = e.touches[0].clientX
+        this.y = Math.max(50, e.touches[0].clientY)
+      }
+      // PC设备鼠标事件
+      else {
+        this.x = e.offsetX
+        this.y = Math.max(50, e.offsetY)
+      }
     }
     // 非动态渲染
     if (!this.isRending) {

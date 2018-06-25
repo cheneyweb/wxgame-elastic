@@ -11,15 +11,17 @@ export class ResourceLoader {
       let res = null
       if (src.split('.')[1] == 'png' || src.split('.')[1] == 'jpg') {
         this.imageCount++
-        // 微信创建img的API
-        res = wx.createImage()
-        // H5创建img的API
-        // res = new Image()
+        // H5创建image的API
+        res = new Image()
+        // 微信创建image的API
+        // res = wx.createImage()
         res.src = src
       } else {
         this.audioCount++
+        // H5创建audio的API
+        res = new Audio()
         // 微信创建audio的API
-        res = wx.createInnerAudioContext()
+        // res = wx.createInnerAudioContext()
         res.src = src
       }
       this.map.set(key, res)
