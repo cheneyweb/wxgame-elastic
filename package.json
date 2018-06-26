@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html --public-url / --no-source-maps",
-    "build-github": "parcel build index.html --public-url /dist/ --no-source-maps"
+    "build-github": "parcel build index.html --public-url /dist/ "
   },
   "author": "cheneyxu",
   "license": "ISC",
