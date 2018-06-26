@@ -33,4 +33,3 @@ var e,t=arguments[3],n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterat
 },{"./src/base/ResourceLoader.js":11,"./src/base/DataStore.js":12,"./src/Director.js":10}],4:[function(require,module,exports) {
 "use strict";var e=require("./App.js"),n=require("./src/base/matter.js"),r="undefined"==typeof wx?document.getElementById("app"):wx.createCanvas();"undefined"==typeof wx?(r.width=375,r.height=667):(window.Image=function(){return wx.createImage()},window.Audio=function(){return wx.createInnerAudioContext()});var t=n.Engine.create({enableSleeping:!0}),a=n.Render.create({canvas:r,engine:t,options:{width:r.width,height:r.height,background:"./res/background.png",wireframes:!1,showAngleIndicator:!1}});n.Engine.run(t);var i={Matter:n,engine:t,canvas:r,render:a};new e.App(r,i);
 },{"./src/base/matter.js":7,"./App.js":6}]},{},[4], null)
-//# sourceMappingURL=/wxgame-elastic/dist/game.b6195bae.map
