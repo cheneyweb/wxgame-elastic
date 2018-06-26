@@ -50,8 +50,19 @@ export class App {
    * 注册事件
    */
   registerEvent() {
-    // 使用=>使this指向Main类
+    // 移动设备触摸事件，使用=>使this指向Main类
     this.canvas.addEventListener('touchstart', e => {
+      // 屏蔽事件冒泡
+      e.preventDefault()
+      // 如果游戏是结束状态，则重新开始
+      if (this.dataStore.isGameOver) {
+        // 重新初始化
+        this.dataStore.isGameOver = false
+        this.reload()
+      }
+    })
+    // PC设备点击事件
+    this.canvas.addEventListener('mousedown', e => {
       // 屏蔽事件冒泡
       e.preventDefault()
       // 如果游戏是结束状态，则重新开始
