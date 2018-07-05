@@ -6,7 +6,9 @@
 
 >H5模式演示版本：[https://cheneyweb.github.io/wxgame-elastic/dist/index.html](https://cheneyweb.github.io/wxgame-elastic/dist/index.html)
 
->H5模式二维码，手机扫码体验（微信扫码，浏览器扫码等都可以）![H5模式二维码.png](https://upload-images.jianshu.io/upload_images/5173617-28eadf06e69ad5fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>H5模式二维码，手机扫码体验（微信扫码，浏览器扫码等都可以）
+
+![elastic-qrcode.png](https://upload-images.jianshu.io/upload_images/5173617-ceda6855b90f3b5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 >微信小游戏模式演示版本：需要打开微信开发者工具导入工程目录
 
